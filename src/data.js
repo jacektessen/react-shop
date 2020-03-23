@@ -4,6 +4,8 @@ import img3 from "./images/bear (3).jpg";
 import img4 from "./images/bear (4).jpg";
 import img5 from "./images/bear (5).jpg";
 import img6 from "./images/bear (6).jpg";
+import img7 from "./images/bear (7).jpg";
+import img8 from "./images/bear (8).jpg";
 
 export const items = [
   {
@@ -50,5 +52,21 @@ export const items = [
     description:
       "Nam tincidunt urna vitae vehicula elementum. Ut eu blandit orci. Aliquam in velit in ipsum vulputate maximus vitae sodales dolor.",
     img: img6
+  },
+  {
+    id: 7,
+    title: "Owl",
+    price: 20,
+    description:
+      "Sagittis fermentum eros, quis placerat eros faucibus sed. Aliquam blandit lacus a volutpat dictum. Sed ornare a elit a hendrerit.",
+    img: img7
+  },
+  {
+    id: 8,
+    title: "Elephant",
+    price: 40,
+    description:
+      "Suspendisse egestas, lorem pulvinar volutpat ultrices, erat eros tempus lacus, non dictum libero lorem ut mi.",
+    img: img8
   }
 ];
