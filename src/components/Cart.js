@@ -1,5 +1,6 @@
 import React from "react";
 import InCartItem from "./InCartItem";
+import { Button } from "reactstrap";
 
 const Cart = () => {
   return (
@@ -10,7 +11,7 @@ const Cart = () => {
       </div>
       <div className="total">
         <p>Total: $200</p>
-        <button color="info">Pay</button>
+        <Button color="info">Pay</Button>
       </div>
     </div>
   );

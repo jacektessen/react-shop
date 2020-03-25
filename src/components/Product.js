@@ -1,29 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./style.css";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  Button,
+  CardFooter,
+  Input
+} from "reactstrap";
 
-const Product = ({ item: { title, price, description, img, id } }) => {
+const Product = ({ item: { Title, Price, Description, url } }) => {
   return (
-    <div id="product">
-      <Link
-        to={{
-          pathname: `/ProductDetail/${id}`,
-          state: {
-            product: { title, price, description, img }
-          }
-        }}
-      >
-        <img src={img} alt="" />
-        <p className="title">{title}</p>
-      </Link>
-      <p>
-        {description.length < 20
-          ? description
-          : `${description.substring(0, 25)}...`}
-      </p>
-      <div className="footer">
-        <button>Add to Cart</button>
-        <p className="price">${price}</p>
-      </div>
+    <div className="product">
+      <Card>
+        <CardImg top width="100%" alt="product" src={url} />
+        <CardBody>
+          <CardText className="title">{Title}</CardText>
+          <CardText>
+            {Description.length < 20
+              ? Description
+              : `${Description.substring(0, 25)}...`}
+          </CardText>
+          <CardFooter>
+            <Button color="info">Add to Cart</Button>
+            <Input type="number" className="quantity" placeholder="1" />
+            <CardText className="price">${Price}</CardText>
+          </CardFooter>
+        </CardBody>
+      </Card>
     </div>
   );
 };

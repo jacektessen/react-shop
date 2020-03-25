@@ -1,14 +1,14 @@
 import React from "react";
 
 const ProductDetail = ({ location }) => {
-  const { title, price, description, img } = location.state.product;
+  const { Title, Price, Description, url } = location.state.product;
 
   return (
     <div className="container">
-      <p>{title}</p>
-      <p>{price}</p>
-      <p>{description}</p>
-      <img src={img} alt="" />
+      <p>{Title}</p>
+      <p>{Price}</p>
+      <p>{Description}</p>
+      <img src={url} alt="" />
     </div>
   );
 };

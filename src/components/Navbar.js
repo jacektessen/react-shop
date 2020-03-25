@@ -1,31 +1,26 @@
 import React, { useState } from "react";
+import { Collapse, Navbar, NavbarToggler, Nav } from "reactstrap";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-
 const NavBar = () => {
-  const [openMenu, setOpenMenu] = useState(true);
-  const toggleMenu = e => {
-    setOpenMenu(!openMenu);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div id="nav">
-      <div className="navbar container">
-        <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
-        <nav className={openMenu ? "displayNone" : null}>
-          <Link to="/">Shop</Link>
-          <Link className="link" to="/About">
-            About
-          </Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-        <nav className={openMenu ? "displayNone" : null}>
+    <Navbar color="info" dark expand="sm">
+      <div className="container">
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <Link to="/">Shop</Link>
+            <Link to="/About">About</Link>
+            <Link to="/contact">Contact</Link>
+          </Nav>
           <Link to="/LogIn">Log In</Link>
+          <br />
           <Link to="/CartView">Cart</Link>
-        </nav>
+        </Collapse>
       </div>
-    </div>
+    </Navbar>
   );
 };
 
